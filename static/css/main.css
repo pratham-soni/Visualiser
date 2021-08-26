@@ -1,0 +1,105 @@
+.navbar{
+    top:0px;
+    left:0px;
+    position: fixed;
+    background-color: #5F6060;
+    color:#53AAFC;
+    width: 100%;
+    padding: 20px 10px;
+}
+.navbar h2{
+    display: inline;
+    color: white !important;
+}
+.navbar .sorting_buttons{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-around;
+    float: right;
+    padding-right: 10px;
+}
+.navbar .sorting_buttons button{
+    padding: 5px 20px;
+    background-color: #696A68;
+    color:#53AAFC;
+    border: 1.5px solid #53AAFC;
+    border-radius: 5px;
+    /* box-shadow: inset 0px 1px 0px rgba(83,170,252,.5); */
+    cursor: pointer;
+}
+.navbar .action_buttons{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar .action_buttons button{
+    padding: 5px 20px;
+    background-color: #696A68;
+    color:#53AAFC;
+    border: 1px solid #53AAFc;
+    border-radius: 5px;
+    /* box-shadow: inset 0px 1px 0px rgba(83,170,252,.5); */
+    cursor: pointer;
+}
+.navbar .action_buttons button.disabled_button{
+    color: whitesmoke;
+    border-color: whitesmoke;
+    cursor: not-allowed;
+}
+.main_body{
+    padding-top: 180px;
+    height: 100%;
+}
+.array_container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    align-items: flex-end;
+}
+.slider_div{
+    display: block;
+}
+.navbar .sorting_buttons button.disabled_button{
+    color: whitesmoke;
+    border-color: whitesmoke;
+    cursor: not-allowed;
+}
+.info_div h2, .info_div span,.info_div h3,.info_div h4,.info_div h5{
+    color: white;
+    
+}
+code{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #605C5C;
+    background: #504E4E !important;
+}
+code pre{
+    margin-left: 30px;
+    padding-right: 350px;
+    background-color: #696A68;;
+    color: white;
+    border: 2px solid #53AAFC;
+    background-clip: padding-box;
+}
+.k{
+    font-weight: bold;
+}
+#merge_sort_info{
+    display: block;
+}
+#bubble_sort_info, #quick_sort_info, #heap_sort_info{
+    display: none;
+}
+#binary_search_info{
+    display: none;
+}

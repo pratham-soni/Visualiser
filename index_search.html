@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Algo Visualizer
+        </title>
+        <link rel="icon" href="./images/logo.svg"/>
+        <link rel="mask-icon" href="./images/logo.svg" />
+        <link href="./css/main.css" rel="stylesheet" />
+        <link href="./css/table.css" rel="stylesheet" />
+        <link href="./css/searching.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="extras/jquery.range.js" type="text/javascript"></script>
+        <link href="./extras/jquery.range.css" rel="stylesheet" />
+    </head>
+    <body style="background-color: #504E4E;">
+        <div class="navbar">
+            <h2>Searching Visualizer</h2>
+            <div class="sorting_buttons">
+                <button>Simple</button>
+                <button>Binary</button>
+            </div>
+            <div class="action_buttons">
+                <button id="reset_array">
+                    Reset array
+                </button>
+                <div class="slider_div">
+                    <span style="margin-bottom: 15px; display: inline-block;">Select Array Size</span>
+                    <input type="hidden" id="array_size" value="200"/>
+                </div>
+                <div class="slider_div">
+                    <span style="margin-bottom: 15px; display: inline-block;">Select Searching Speed</span>
+                    <input type="hidden" id="searching_speed" value="3" />
+                </div>
+                <button class="disabled_button" disabled id="stop_searching">
+                    Stop
+                </button>
+                <button id="start_searching">
+                    Start
+                </button>
+                <div style="display: flex; flex-direction: column;">
+                    <span>Selected Algo : <b id="selected_algorithm"> Simple</b></span>
+                    <input type="number" placeholder="Enter number to search" id="ele_to_search" value="1" min="1" class="input_field"/>
+                </div>
+            </div>
+        </div>
+        <div class="main_body_searching">
+            <div class="array_container_searching" id="array_container_searching" >
+                
+            </div>
+
+        </div>
+        <div class="info_div">
+            <div id="simple_search_info">
+                <h2>Basic Information - </h2>
+                <div class="main_info_div">
+                    <h3>Time Complexities - </h3>
+                    <div class="container">
+        
+                        <div class="table">
+                            <div class="table-header">
+                                <div class="header__item">Case</div>
+                                <div class="header__item">Complexities</div>
+                            </div>
+                            <div class="table-content">	
+                                <div class="table-row">		
+                                    <div class="table-data">Best</div>
+                                    <div class="table-data">O(1)</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-data">Average</div>
+                                    <div class="table-data">O(n/2) --&gt; O(n)</div>
+    
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-data">Worst</div>
+                                    <div class="table-data">O(n)</div>
+                                </div>
+                            </div>	
+                        </div>
+                    </div>
+                    <h3>Algorithm - </h3>
+                    <code>
+                        <pre>                        
+                        <b>algorithm</b> search(A,n, T) <b>is</b>
+                            <b>for</b> j&nbsp;:= 0 <b>to</b> n <b>do</b>
+                                <b>if</b> A[j] = T <b>then</b>
+                                    return&nbsp;j
+                            <b>return</b> -1
+                        </pre>
+                    </code>
+    
+                </div>
+    
+            </div>
+            <div id="binary_search_info">
+                <h2>Basic Information - </h2>
+                <div class="main_info_div">
+                    <h3>Time Complexities - </h3>
+                    <div class="container">
+        
+                        <div class="table">
+                            <div class="table-header">
+                                <div class="header__item">Case</div>
+                                <div class="header__item">Complexities</div>
+                            </div>
+                            <div class="table-content">	
+                                <div class="table-row">		
+                                    <div class="table-data">Best</div>
+                                    <div class="table-data">O(1)</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-data">Average</div>
+                                    <div class="table-data">O(logn)</div>
+    
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-data">Worst</div>
+                                    <div class="table-data">O(logn)</div>
+                                </div>
+                            </div>	
+                        </div>
+                    </div>
+                    <h3>Algorithm - </h3>
+                    <code>
+                        <pre>
+                            <b>function</b> binary_search(A, n, T) <b>is</b>
+                            L&nbsp;:= 0
+                            R&nbsp;:= n − 1
+                            <b>while</b> L ≤ R <b>do</b>
+                                m&nbsp;:= floor((L + R) / 2)
+                                <b>if</b> A[m] &lt; T <b>then</b>
+                                    L&nbsp;:= m + 1
+                                <b>else if</b> A[m] &gt; T <b>then</b>
+                                    R&nbsp;:= m − 1
+                                <b>else</b>:
+                                    <b>return</b> m
+                            <b>return</b> -1
+                        </pre>
+                    </code>
+    
+                </div>
+    
+            </div>
+        </div>
+        
+    </body>
+    <script src="js/searching/generate_array.js" type="text/javascript"></script>
+    <script src="js/searching/visualisation.js" type="text/javascript"></script>
+    <script src="js/searching/enable_disable_buttons.js" type="text/javascript"></script>
+    <script src="js/searching/run_searching.js" type="text/javascript"></script>
+    <script src="js/searching/main.js" type="text/javascript"></script>
+    <script src="js/searching/searching_algos/simple_search.js" type="text/javascript"></script>
+    <script src="js/searching/searching_algos/binary_search.js" type="text/javascript"></script>
+</html>
